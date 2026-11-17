@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { API_URL, type Benchmarks } from "@/lib/api";
+import { API_HEADERS, API_URL, OFFLINE_MESSAGE, type Benchmarks } from "@/lib/api";
 import { MetricTable } from "@/components/benchmarks/MetricTable";
 import { pct } from "@/lib/format";
 
@@ -10,7 +10,7 @@ const SERVER_API = (process.env.API_URL ?? API_URL).replace(/\/$/, "");
 
 async function load(): Promise<Benchmarks | null> {
   try {
-    const res = await fetch(`${SERVER_API}/api/benchmarks`, { cache: "no-store" });
+    const res = await fetch(`${SERVER_API}/api/benchmarks`, { cache: "no-store", headers: API_HEADERS });
     return res.ok ? ((await res.json()) as Benchmarks) : null;
   } catch {
     return null;
@@ -40,10 +40,7 @@ export default async function BenchmarksPage() {
       {!data ? (
         <div role="alert" className="mt-10 border border-fg p-5 text-sm leading-relaxed">
           <p className="font-semibold">The results could not be loaded</p>
-          <p className="mt-2 text-muted">
-            The detector API is not running. Start it from the project folder with{" "}
-            <code className="font-mono text-fg">python -m src.api</code>, then reload this page.
-          </p>
+          <p className="mt-2 text-muted">{OFFLINE_MESSAGE}</p>
         </div>
       ) : (
         <div className="mt-12 space-y-16">

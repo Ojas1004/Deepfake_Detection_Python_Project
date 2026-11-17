@@ -94,7 +94,7 @@ export function Detector() {
           <div role="alert" className="border border-fg p-4 text-sm leading-relaxed">
             <p className="flex items-start gap-2 font-semibold">
               <WarningCircle aria-hidden="true" className="mt-0.5 size-5 shrink-0" />
-              The detector API is not running
+              The detector is offline
             </p>
             <p className="mt-2 text-muted">{modelsError}</p>
             <button

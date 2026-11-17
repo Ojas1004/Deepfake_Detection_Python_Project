@@ -405,10 +405,44 @@ of the evidence lies on the face versus the background.
 
 ---
 
+## 8. Deploy (website on Vercel, models on your laptop)
+
+The website runs on Vercel, so anyone can open it from any device. The models still run on your laptop's GPU:
+an **ngrok** tunnel gives your laptop's API a fixed public HTTPS address that the website calls. While your laptop
+is on and running `scripts/serve_public.sh`, the site works for everyone; otherwise it shows "The detector is offline".
+
+**One-time setup**
+1. **ngrok** (free):
+   - Create an account at ngrok.com.
+   - Install it: `yay -S ngrok` (AUR), or download it from ngrok.com/download.
+   - Connect it to your account: `ngrok config add-authtoken <your token>` (the token is on the ngrok dashboard).
+   - On the dashboard, under *Domains*, claim your free static domain, e.g. `something.ngrok-free.app`.
+2. **Vercel**:
+   - Add New → Project → import this GitHub repository.
+   - **Root Directory:** `web`. The Next.js framework is detected automatically.
+   - **Environment variables:** `NEXT_PUBLIC_API_URL` and `API_URL`, both set to `https://<your-domain>.ngrok-free.app`.
+   - Deploy, and note the site's address, e.g. `your-site.vercel.app`.
+
+**Every time the site should work** (before a presentation, for example):
+```fish
+scripts/serve_public.sh your-site.vercel.app your-domain.ngrok-free.app
+```
+This starts the API and the tunnel, allows your Vercel site (and its preview deployments) to call the API, and keeps
+the laptop awake, even with the lid closed, until you press Ctrl+C. Keep the laptop plugged in and online. Teammates
+just open the Vercel address on their own laptops.
+
+Notes:
+- The ngrok address never changes, so Vercel only needs redeploying when you change its environment variables.
+- While it runs, the API keeps up to 3 models on the GPU (about 5–6 GB), so don't train or evaluate at the same time.
+- ngrok's free plan has monthly usage limits; check its pricing page if many people will use the site.
+
+---
+
 ## Project structure
 
 ```
 check_gpu.py          step 0: verify that PyTorch can use the GPU
+scripts/serve_public.sh  serve the API to the deployed website (API + ngrok tunnel, laptop kept awake)
 assets/               YuNet face-detector model (OpenCV model zoo, MIT licence)
 src/
   config.py           paths, dataset sources, split plan, constants

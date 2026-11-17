@@ -342,13 +342,16 @@ async def analyze_endpoint(request: Request) -> JSONResponse:
 
 
 def build_app() -> Starlette:
-    origins = os.environ.get("WEB_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000").split(",")
+    # Websites allowed to call this API: WEB_ORIGINS (comma-separated, exact) and,
+    # optionally, WEB_ORIGIN_REGEX (e.g. Vercel preview URLs).
+    origins = [o.strip() for o in os.environ.get("WEB_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000").split(",")]
+    origin_regex = os.environ.get("WEB_ORIGIN_REGEX") or None
     return Starlette(
         routes=[Route("/api/health", health), Route("/api/models", models_endpoint),
                 Route("/api/benchmarks", benchmarks_endpoint),
                 Route("/api/analyze", analyze_endpoint, methods=["POST"])],
-        middleware=[Middleware(CORSMiddleware, allow_origins=origins, allow_methods=["GET", "POST"],
-                               allow_headers=["*"])],
+        middleware=[Middleware(CORSMiddleware, allow_origins=origins, allow_origin_regex=origin_regex,
+                               allow_methods=["GET", "POST"], allow_headers=["*"])],
     )
 
 

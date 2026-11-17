@@ -97,16 +97,22 @@ export type Benchmarks = {
 
 export class ApiError extends Error {}
 
-const UNREACHABLE =
-  "Can't reach the detector API. Start it from the project folder with `python -m src.api`, then try again.";
+// ngrok's free plan shows a warning page to browsers unless this header is sent;
+// other hosts ignore it.
+export const API_HEADERS = { "ngrok-skip-browser-warning": "1" };
+
+export const OFFLINE_MESSAGE =
+  process.env.NODE_ENV === "development"
+    ? "Can't reach the detector API. Start it from the project folder with `python -m src.api`, then try again."
+    : "The detector is offline right now. It runs on the project team's own computer, which may be switched off. Please try again later.";
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   let res: Response;
   try {
-    res = await fetch(`${API_URL}${path}`, init);
+    res = await fetch(`${API_URL}${path}`, { ...init, headers: { ...API_HEADERS, ...init?.headers } });
   } catch (err) {
     if ((err as Error).name === "AbortError") throw err;
-    throw new ApiError(UNREACHABLE);
+    throw new ApiError(OFFLINE_MESSAGE);
   }
   const body = await res.json().catch(() => null);
   if (!res.ok) throw new ApiError(body?.error ?? `The API answered with status ${res.status}.`);
