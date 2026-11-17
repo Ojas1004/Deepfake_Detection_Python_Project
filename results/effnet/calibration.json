@@ -1,0 +1,8 @@
+{
+  "temperature": 2.766436104157103,
+  "fitted_on": "validation set",
+  "val_nll_before": 0.3302320291408023,
+  "val_nll_after": 0.1992855761966201,
+  "test_ece_before": 0.043028856794381315,
+  "test_ece_after": 0.015384987490181226
+}

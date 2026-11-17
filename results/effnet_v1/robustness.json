@@ -1,0 +1,50 @@
+{
+  "label": "EfficientNet-B0 (fine-tuned) - v1: StyleGAN only",
+  "conditions": {
+    "clean": {
+      "accuracy": 0.6210144758224487,
+      "reals_correct": 0.9159420132637024,
+      "fakes_detected": 0.32608696818351746
+    },
+    "JPEG q90": {
+      "accuracy": 0.5481159687042236,
+      "reals_correct": 0.7182608842849731,
+      "fakes_detected": 0.37797102332115173
+    },
+    "JPEG q70": {
+      "accuracy": 0.49942028522491455,
+      "reals_correct": 0.5095652341842651,
+      "fakes_detected": 0.48927536606788635
+    },
+    "JPEG q50": {
+      "accuracy": 0.5028985738754272,
+      "reals_correct": 0.42695653438568115,
+      "fakes_detected": 0.5788405537605286
+    },
+    "low-res (50%)": {
+      "accuracy": 0.5221739411354065,
+      "reals_correct": 0.9962319135665894,
+      "fakes_detected": 0.048115942627191544
+    },
+    "blur (r=1)": {
+      "accuracy": 0.566231906414032,
+      "reals_correct": 0.9927536249160767,
+      "fakes_detected": 0.13971014320850372
+    },
+    "WhatsApp-like": {
+      "accuracy": 0.552173912525177,
+      "reals_correct": 0.6252173781394958,
+      "fakes_detected": 0.47913044691085815
+    },
+    "zoom in 1.3x": {
+      "accuracy": 0.5704348087310791,
+      "reals_correct": 0.8034782409667969,
+      "fakes_detected": 0.33739131689071655
+    },
+    "zoom out 0.75x": {
+      "accuracy": 0.5514492988586426,
+      "reals_correct": 0.9872463941574097,
+      "fakes_detected": 0.1156521737575531
+    }
+  }
+}

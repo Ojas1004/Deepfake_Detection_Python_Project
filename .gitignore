@@ -1,0 +1,59 @@
+# ---------------------------------------------------------------------------
+# Secrets: never commit. Keep tokens in environment variables or in your home
+# folder (~/.kaggle/access_token, ~/.cache/huggingface/token), never in the repo.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+kaggle.json
+access_token
+token
+credentials*.json
+secrets*.json
+.vercel/
+
+# ---------------------------------------------------------------------------
+# Large or regenerable files
+# ---------------------------------------------------------------------------
+# Datasets and cached CLIP/DINOv2 features (tens of GB; OpenFake is CC BY-NC).
+data/
+# Trained model weights (re-create with src/train.py / src/train_frozen.py).
+checkpoints/
+# Results from before the test set last changed (superseded).
+results/_old_testset_backup/
+*.log
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------------------
+# Node / Next.js (web/)
+# ---------------------------------------------------------------------------
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+
+# ---------------------------------------------------------------------------
+# Editors, OS and local tools
+# ---------------------------------------------------------------------------
+.claude/
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

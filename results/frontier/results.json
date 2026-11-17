@@ -1,0 +1,471 @@
+{
+  "results": {
+    "[ours] SimpleCNN (from scratch) - v2: multi-source + robust": {
+      "original | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.7201426024955436,
+        "detected_at_1pct_fp": 0.1590909090909091,
+        "fakes_caught": 0.3977272727272727,
+        "reals_kept": 0.9215686274509803
+      },
+      "whatsapp | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.717023172905526,
+        "detected_at_1pct_fp": 0.20454545454545456,
+        "fakes_caught": 0.4318181818181818,
+        "reals_kept": 0.8627450980392157
+      },
+      "instagram | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.6454991087344027,
+        "detected_at_1pct_fp": 0.09090909090909091,
+        "fakes_caught": 0.4090909090909091,
+        "reals_kept": 0.7647058823529411
+      },
+      "reshared | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.6769162210338681,
+        "detected_at_1pct_fp": 0.20454545454545456,
+        "fakes_caught": 0.4318181818181818,
+        "reals_kept": 0.8235294117647058
+      }
+    },
+    "[ours] EfficientNet-B0 (fine-tuned) - v2: multi-source + robust": {
+      "original | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.6891711229946523,
+        "detected_at_1pct_fp": 0.07954545454545454,
+        "fakes_caught": 0.3181818181818182,
+        "reals_kept": 0.8627450980392157
+      },
+      "whatsapp | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.5944741532976827,
+        "detected_at_1pct_fp": 0.03409090909090909,
+        "fakes_caught": 0.375,
+        "reals_kept": 0.7058823529411765
+      },
+      "instagram | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.5389928698752229,
+        "detected_at_1pct_fp": 0.03409090909090909,
+        "fakes_caught": 0.3522727272727273,
+        "reals_kept": 0.6274509803921569
+      },
+      "reshared | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.5367647058823529,
+        "detected_at_1pct_fp": 0.011363636363636364,
+        "fakes_caught": 0.375,
+        "reals_kept": 0.5882352941176471
+      }
+    },
+    "[ours] CLIP ViT-L/14 (frozen) + trained head": {
+      "original | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.931149732620321,
+        "detected_at_1pct_fp": 0.625,
+        "fakes_caught": 0.8636363636363636,
+        "reals_kept": 0.8431372549019608
+      },
+      "whatsapp | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.8308823529411764,
+        "detected_at_1pct_fp": 0.375,
+        "fakes_caught": 0.4659090909090909,
+        "reals_kept": 0.9607843137254902
+      },
+      "instagram | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.8972816399286987,
+        "detected_at_1pct_fp": 0.5795454545454546,
+        "fakes_caught": 0.6136363636363636,
+        "reals_kept": 0.9607843137254902
+      },
+      "reshared | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.8700980392156863,
+        "detected_at_1pct_fp": 0.5227272727272727,
+        "fakes_caught": 0.5795454545454546,
+        "reals_kept": 0.9607843137254902
+      }
+    },
+    "[ours] SimpleCNN (from scratch) - v1: StyleGAN only": {
+      "original | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.5993761140819964,
+        "detected_at_1pct_fp": 0.10227272727272728,
+        "fakes_caught": 0.09090909090909091,
+        "reals_kept": 1.0
+      },
+      "whatsapp | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.6321301247771837,
+        "detected_at_1pct_fp": 0.125,
+        "fakes_caught": 0.11363636363636363,
+        "reals_kept": 0.9803921568627451
+      },
+      "instagram | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.5844474153297683,
+        "detected_at_1pct_fp": 0.10227272727272728,
+        "fakes_caught": 0.10227272727272728,
+        "reals_kept": 1.0
+      },
+      "reshared | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.5782085561497327,
+        "detected_at_1pct_fp": 0.1590909090909091,
+        "fakes_caught": 0.125,
+        "reals_kept": 1.0
+      }
+    },
+    "[ours] EfficientNet-B0 (fine-tuned) - v1: StyleGAN only": {
+      "original | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.6087344028520498,
+        "detected_at_1pct_fp": 0.14772727272727273,
+        "fakes_caught": 0.125,
+        "reals_kept": 1.0
+      },
+      "whatsapp | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.6105169340463458,
+        "detected_at_1pct_fp": 0.17045454545454544,
+        "fakes_caught": 0.2727272727272727,
+        "reals_kept": 0.9215686274509803
+      },
+      "instagram | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.6314616755793226,
+        "detected_at_1pct_fp": 0.14772727272727273,
+        "fakes_caught": 0.2159090909090909,
+        "reals_kept": 0.9607843137254902
+      },
+      "reshared | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.6000445632798574,
+        "detected_at_1pct_fp": 0.23863636363636365,
+        "fakes_caught": 0.23863636363636365,
+        "reals_kept": 0.9803921568627451
+      }
+    },
+    "[ours] EfficientNet-B0 (fine-tuned) [effnet_v3]": {
+      "original | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.7696078431372549,
+        "detected_at_1pct_fp": 0.25,
+        "fakes_caught": 0.6363636363636364,
+        "reals_kept": 0.7647058823529411
+      },
+      "whatsapp | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.7395276292335117,
+        "detected_at_1pct_fp": 0.14772727272727273,
+        "fakes_caught": 0.5681818181818182,
+        "reals_kept": 0.803921568627451
+      },
+      "instagram | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.696524064171123,
+        "detected_at_1pct_fp": 0.10227272727272728,
+        "fakes_caught": 0.6022727272727273,
+        "reals_kept": 0.6470588235294118
+      },
+      "reshared | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.7040998217468806,
+        "detected_at_1pct_fp": 0.10227272727272728,
+        "fakes_caught": 0.6022727272727273,
+        "reals_kept": 0.7058823529411765
+      }
+    },
+    "[external] CommunityForensics ViT (CVPR 2025)": {
+      "original | all": {
+        "n_fake": 261,
+        "n_real": 486,
+        "roc_auc": 0.7810021600996484,
+        "detected_at_1pct_fp": 0.25287356321839083,
+        "fakes_caught": 0.36015325670498083,
+        "reals_kept": 0.9629629629629629
+      },
+      "original | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.9089795008912657,
+        "detected_at_1pct_fp": 0.5340909090909091,
+        "fakes_caught": 0.4431818181818182,
+        "reals_kept": 1.0
+      },
+      "whatsapp | all": {
+        "n_fake": 261,
+        "n_real": 482,
+        "roc_auc": 0.706785265735044,
+        "detected_at_1pct_fp": 0.19923371647509577,
+        "fakes_caught": 0.10344827586206896,
+        "reals_kept": 0.9979253112033195
+      },
+      "whatsapp | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.8686497326203209,
+        "detected_at_1pct_fp": 0.38636363636363635,
+        "fakes_caught": 0.13636363636363635,
+        "reals_kept": 1.0
+      },
+      "instagram | all": {
+        "n_fake": 261,
+        "n_real": 482,
+        "roc_auc": 0.7000007948999221,
+        "detected_at_1pct_fp": 0.21839080459770116,
+        "fakes_caught": 0.16091954022988506,
+        "reals_kept": 0.995850622406639
+      },
+      "instagram | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.8612967914438503,
+        "detected_at_1pct_fp": 0.3522727272727273,
+        "fakes_caught": 0.20454545454545456,
+        "reals_kept": 1.0
+      },
+      "reshared | all": {
+        "n_fake": 261,
+        "n_real": 482,
+        "roc_auc": 0.7020039427036137,
+        "detected_at_1pct_fp": 0.20306513409961685,
+        "fakes_caught": 0.12260536398467432,
+        "reals_kept": 0.9979253112033195
+      },
+      "reshared | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.8650846702317291,
+        "detected_at_1pct_fp": 0.4318181818181818,
+        "fakes_caught": 0.17045454545454544,
+        "reals_kept": 1.0
+      }
+    },
+    "[external] SigLIP AI-vs-human (Ateeqq)": {
+      "original | all": {
+        "n_fake": 261,
+        "n_real": 486,
+        "roc_auc": 0.8045582832726298,
+        "detected_at_1pct_fp": 0.13793103448275862,
+        "fakes_caught": 0.5977011494252874,
+        "reals_kept": 0.8395061728395061
+      },
+      "original | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.7718360071301247,
+        "detected_at_1pct_fp": 0.11363636363636363,
+        "fakes_caught": 0.7386363636363636,
+        "reals_kept": 0.6862745098039216
+      },
+      "whatsapp | all": {
+        "n_fake": 261,
+        "n_real": 482,
+        "roc_auc": 0.8077296068424985,
+        "detected_at_1pct_fp": 0.14559386973180077,
+        "fakes_caught": 0.6091954022988506,
+        "reals_kept": 0.8278008298755186
+      },
+      "whatsapp | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.7845365418894831,
+        "detected_at_1pct_fp": 0.11363636363636363,
+        "fakes_caught": 0.75,
+        "reals_kept": 0.7058823529411765
+      },
+      "instagram | all": {
+        "n_fake": 261,
+        "n_real": 482,
+        "roc_auc": 0.802173256387021,
+        "detected_at_1pct_fp": 0.1417624521072797,
+        "fakes_caught": 0.6015325670498084,
+        "reals_kept": 0.8153526970954357
+      },
+      "instagram | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.7728386809269163,
+        "detected_at_1pct_fp": 0.11363636363636363,
+        "fakes_caught": 0.7386363636363636,
+        "reals_kept": 0.6470588235294118
+      },
+      "reshared | all": {
+        "n_fake": 261,
+        "n_real": 482,
+        "roc_auc": 0.8031390597923722,
+        "detected_at_1pct_fp": 0.12643678160919541,
+        "fakes_caught": 0.5977011494252874,
+        "reals_kept": 0.8195020746887967
+      },
+      "reshared | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.770499108734403,
+        "detected_at_1pct_fp": 0.11363636363636363,
+        "fakes_caught": 0.75,
+        "reals_kept": 0.6666666666666666
+      }
+    },
+    "[external] SwinV2 AI detector (haywoodsloan)": {
+      "original | all": {
+        "n_fake": 261,
+        "n_real": 486,
+        "roc_auc": 0.9259259259259258,
+        "detected_at_1pct_fp": 0.6436781609195402,
+        "fakes_caught": 0.6819923371647509,
+        "reals_kept": 0.9835390946502057
+      },
+      "original | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.9037433155080213,
+        "detected_at_1pct_fp": 0.09090909090909091,
+        "fakes_caught": 0.7840909090909091,
+        "reals_kept": 0.9411764705882353
+      },
+      "whatsapp | all": {
+        "n_fake": 261,
+        "n_real": 482,
+        "roc_auc": 0.9032527304812326,
+        "detected_at_1pct_fp": 0.421455938697318,
+        "fakes_caught": 0.3716475095785441,
+        "reals_kept": 0.991701244813278
+      },
+      "whatsapp | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.8903743315508019,
+        "detected_at_1pct_fp": 0.10227272727272728,
+        "fakes_caught": 0.5227272727272727,
+        "reals_kept": 0.9607843137254902
+      },
+      "instagram | all": {
+        "n_fake": 261,
+        "n_real": 482,
+        "roc_auc": 0.8942226673661786,
+        "detected_at_1pct_fp": 0.3946360153256705,
+        "fakes_caught": 0.4521072796934866,
+        "reals_kept": 0.9875518672199171
+      },
+      "instagram | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.8972816399286988,
+        "detected_at_1pct_fp": 0.07954545454545454,
+        "fakes_caught": 0.6022727272727273,
+        "reals_kept": 0.9607843137254902
+      },
+      "reshared | all": {
+        "n_fake": 261,
+        "n_real": 482,
+        "roc_auc": 0.8941352283747477,
+        "detected_at_1pct_fp": 0.38697318007662834,
+        "fakes_caught": 0.39846743295019155,
+        "reals_kept": 0.9854771784232366
+      },
+      "reshared | faces": {
+        "n_fake": 88,
+        "n_real": 51,
+        "roc_auc": 0.8872549019607844,
+        "detected_at_1pct_fp": 0.14772727272727273,
+        "fakes_caught": 0.5795454545454546,
+        "reals_kept": 0.9411764705882353
+      }
+    }
+  },
+  "per_generator": {
+    "[external] CommunityForensics ViT (CVPR 2025)": {
+      "meta/muse-image": 0.0,
+      "google/nano-banana-2.1": 0.42857142857142855,
+      "nano-banana-pro": 0.15,
+      "blackforestlabs/flux-3": 0.09090909090909091,
+      "openai/gpt-image-2": 0.4166666666666667,
+      "microsoft/mai-image-2.5": 0.25,
+      "bytedance/seedream/v5/pro": 0.0,
+      "xai/grok-imagine-image/v2.0": 0.0,
+      "alibaba/qwen-image-3": 0.3333333333333333,
+      "ideogram/v4.5": 0.35294117647058826,
+      "flux-2-pro": 0.17647058823529413,
+      "recraft/v4.1": 0.0,
+      "z-image/turbo": 0.5454545454545454,
+      "krea-2/turbo": 0.8125,
+      "kling-image/v3": 0.6,
+      "flux-2": 0.9230769230769231,
+      "qwen-image-2512": 0.6,
+      "luma/agent/uni-1/v1": 0.23076923076923078,
+      "hidream-o1-image": 1.0
+    },
+    "[external] SigLIP AI-vs-human (Ateeqq)": {
+      "meta/muse-image": 0.5833333333333334,
+      "google/nano-banana-2.1": 0.35714285714285715,
+      "nano-banana-pro": 0.3,
+      "blackforestlabs/flux-3": 0.5454545454545454,
+      "openai/gpt-image-2": 0.5,
+      "microsoft/mai-image-2.5": 0.8333333333333334,
+      "bytedance/seedream/v5/pro": 0.7142857142857143,
+      "xai/grok-imagine-image/v2.0": 0.6666666666666666,
+      "alibaba/qwen-image-3": 0.8,
+      "ideogram/v4.5": 0.6470588235294118,
+      "flux-2-pro": 0.7058823529411765,
+      "recraft/v4.1": 0.375,
+      "z-image/turbo": 0.5454545454545454,
+      "krea-2/turbo": 0.75,
+      "kling-image/v3": 0.9,
+      "flux-2": 0.6923076923076923,
+      "qwen-image-2512": 0.4,
+      "luma/agent/uni-1/v1": 0.38461538461538464,
+      "hidream-o1-image": 0.75
+    },
+    "[external] SwinV2 AI detector (haywoodsloan)": {
+      "meta/muse-image": 0.5833333333333334,
+      "google/nano-banana-2.1": 0.7857142857142857,
+      "nano-banana-pro": 0.65,
+      "blackforestlabs/flux-3": 0.5454545454545454,
+      "openai/gpt-image-2": 0.6666666666666666,
+      "microsoft/mai-image-2.5": 0.9166666666666666,
+      "bytedance/seedream/v5/pro": 0.14285714285714285,
+      "xai/grok-imagine-image/v2.0": 0.4166666666666667,
+      "alibaba/qwen-image-3": 0.7333333333333333,
+      "ideogram/v4.5": 0.5294117647058824,
+      "flux-2-pro": 0.5294117647058824,
+      "recraft/v4.1": 0.75,
+      "z-image/turbo": 0.5454545454545454,
+      "krea-2/turbo": 0.9375,
+      "kling-image/v3": 0.9,
+      "flux-2": 0.9230769230769231,
+      "qwen-image-2512": 1.0,
+      "luma/agent/uni-1/v1": 0.5384615384615384,
+      "hidream-o1-image": 0.9375
+    }
+  }
+}

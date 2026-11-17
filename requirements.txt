@@ -1,0 +1,31 @@
+# PyTorch wheels built for CUDA 12.8. The RTX 5060 (Blackwell, sm_120) needs
+# CUDA 12.8 or newer. The "+cu128" suffix pins the CUDA build explicitly, so pip
+# can't silently install a CPU-only or different-CUDA wheel instead.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+
+# Data, metrics, plotting
+numpy==2.5.4
+pillow==13.0.0
+scikit-learn==1.9.1
+matplotlib==3.11.2
+tqdm==4.70.1
+
+# Face detection + alignment (YuNet detector, used by prepare_data.py and the app)
+opencv-python-headless==5.0.0.93
+
+# Dataset download (reads the token from ~/.kaggle/access_token)
+kaggle==2.2.5
+six==1.17.0   # imported by kaggle but missing from its own dependency list
+
+# Demo app
+starlette==1.10.0
+uvicorn==0.54.0
+python-multipart==0.0.33   # form uploads in Starlette
+
+# Pretrained reference detector from Hugging Face (src/pretrained.py)
+transformers==5.23.0
+
+# OpenFake / OpenFakeTiny parquet files (src/openfake.py, src/wild_eval.py)
+pyarrow==26.0.1

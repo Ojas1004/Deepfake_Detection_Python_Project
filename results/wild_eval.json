@@ -1,0 +1,72 @@
+{
+  "[ours] SimpleCNN (from scratch) - v2: multi-source + robust": {
+    "fakes_caught_core": 0.5050505050505051,
+    "fakes_caught_reddit": 0.5471311475409836,
+    "reals_correct": 0.6923076923076923,
+    "balanced_accuracy": 0.6117589416952474,
+    "roc_auc": 0.662263596276335
+  },
+  "[ours] EfficientNet-B0 (fine-tuned) - v2: multi-source + robust": {
+    "fakes_caught_core": 0.31986531986531985,
+    "fakes_caught_reddit": 0.5717213114754098,
+    "reals_correct": 0.7538461538461538,
+    "balanced_accuracy": 0.615139637432631,
+    "roc_auc": 0.7169034786869182
+  },
+  "[ours] CLIP ViT-L/14 (frozen) + trained head": {
+    "fakes_caught_core": 0.7912457912457912,
+    "fakes_caught_reddit": 0.7725409836065574,
+    "reals_correct": 0.8769230769230769,
+    "balanced_accuracy": 0.8282704556589907,
+    "roc_auc": 0.924625183733464
+  },
+  "[ours] SimpleCNN (from scratch) - v1: StyleGAN only": {
+    "fakes_caught_core": 0.013468013468013467,
+    "fakes_caught_reddit": 0.00819672131147541,
+    "reals_correct": 1.0,
+    "balanced_accuracy": 0.5050955414012739,
+    "roc_auc": 0.4260852523272905
+  },
+  "[ours] EfficientNet-B0 (fine-tuned) - v1: StyleGAN only": {
+    "fakes_caught_core": 0.03367003367003367,
+    "fakes_caught_reddit": 0.07377049180327869,
+    "reals_correct": 0.9076923076923077,
+    "balanced_accuracy": 0.4831455169034787,
+    "roc_auc": 0.5247623713865752
+  },
+  "[ours] EfficientNet-B0 (fine-tuned) [effnet_v3]": {
+    "fakes_caught_core": 0.5218855218855218,
+    "fakes_caught_reddit": 0.6721311475409836,
+    "reals_correct": 0.8307692307692308,
+    "balanced_accuracy": 0.7230279274865262,
+    "roc_auc": 0.7912395884370407
+  },
+  "[external] CommunityForensics ViT (CVPR 2025)": {
+    "fakes_caught_core": 0.2255892255892256,
+    "fakes_caught_reddit": 0.2459016393442623,
+    "reals_correct": 0.9538461538461539,
+    "balanced_accuracy": 0.596031357177854,
+    "roc_auc": 0.7710730034296913
+  },
+  "[external] SigLIP AI-vs-human (Ateeqq)": {
+    "fakes_caught_core": 0.797979797979798,
+    "fakes_caught_reddit": 0.9241803278688525,
+    "reals_correct": 0.46153846153846156,
+    "balanced_accuracy": 0.6689857912787849,
+    "roc_auc": 0.8240666340029398
+  },
+  "[external] SwinV2 AI detector (haywoodsloan)": {
+    "fakes_caught_core": 0.6094276094276094,
+    "fakes_caught_reddit": 0.7172131147540983,
+    "reals_correct": 0.8769230769230769,
+    "balanced_accuracy": 0.7766780989710926,
+    "roc_auc": 0.8609113179813817
+  },
+  "[external] ViT deepfake detector (prithivMLmods)": {
+    "fakes_caught_core": 0.9764309764309764,
+    "fakes_caught_reddit": 0.9692622950819673,
+    "reals_correct": 0.0,
+    "balanced_accuracy": 0.4859872611464968,
+    "roc_auc": 0.479000489955904
+  }
+}

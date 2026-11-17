@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* Black and white only. Greys exist solely for hierarchy and meet contrast:
+   --muted on --bg is 7.8:1 (light) and 8.3:1 (dark); --line-strong (control
+   borders) is above 3:1 in both. Dark mode inverts the same tokens. */
+:root {
+  --bg: #ffffff;
+  --fg: #0a0a0a;
+  --muted: #525252;
+  --line: #e5e5e5;
+  --line-strong: #737373;
+  --surface: #f5f5f5;
+  --inverse: #0a0a0a;
+  --on-inverse: #ffffff;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0a0a;
+    --fg: #fafafa;
+    --muted: #a3a3a3;
+    --line: #262626;
+    --line-strong: #8a8a8a;
+    --surface: #141414;
+    --inverse: #fafafa;
+    --on-inverse: #0a0a0a;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-surface: var(--surface);
+  --color-inverse: var(--inverse);
+  --color-on-inverse: var(--on-inverse);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* In the base layer, so utilities such as outline-none can still override it. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+  }
+}
+
+/* Diagonal hatching marks the "uncertain" state, so it never relies on colour. */
+.hatch {
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--fg) 10%, transparent) 0 2px,
+    transparent 2px 10px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
