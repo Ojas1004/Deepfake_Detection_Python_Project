@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 # serve_public.sh - Make the detector API reachable for the deployed website.
 #
-#   scripts/serve_public.sh <site>.vercel.app <your-domain>.ngrok-free.app
+#   scripts/serve_public.sh <site>.vercel.app <your-domain>.ngrok-free.dev
 #
 # Starts the API (python -m src.api) and an ngrok tunnel on your fixed ngrok
 # address, and keeps the laptop awake (no sleep, closing the lid does not
 # suspend) until you press Ctrl+C. Run it from anywhere; it finds the project.
 set -euo pipefail
 
-SITE="${1:?usage: scripts/serve_public.sh <site>.vercel.app <your-domain>.ngrok-free.app}"
-DOMAIN="${2:?usage: scripts/serve_public.sh <site>.vercel.app <your-domain>.ngrok-free.app}"
+SITE="${1:?usage: scripts/serve_public.sh <site>.vercel.app <your-domain>.ngrok-free.dev}"
+DOMAIN="${2:?usage: scripts/serve_public.sh <site>.vercel.app <your-domain>.ngrok-free.dev}"
 SITE="${SITE#https://}"
 DOMAIN="${DOMAIN#https://}"
 cd "$(dirname "$0")/.."

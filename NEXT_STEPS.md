@@ -153,6 +153,6 @@ Fakes caught / real photos kept as real at threshold 0.5, and ROC-AUC:
 ## 10. Deployment (2026-11-17)
 
 - Website: Vercel, Root Directory `web`, env vars `NEXT_PUBLIC_API_URL` and `API_URL` = the ngrok address.
-- Models: on this laptop, made public with `scripts/serve_public.sh <site>.vercel.app <domain>.ngrok-free.app`
+- Models: on this laptop, made public with `scripts/serve_public.sh <site>.vercel.app <domain>.ngrok-free.dev`
   (fixed ngrok address, laptop kept awake). Steps in README section 8.
 - Alternative not taken (laptop can't stay on 24/7 was considered): API on a Hugging Face Space (free, CPU only, slower).

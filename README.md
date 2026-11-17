@@ -416,16 +416,16 @@ is on and running `scripts/serve_public.sh`, the site works for everyone; otherw
    - Create an account at ngrok.com.
    - Install it: `yay -S ngrok` (AUR), or download it from ngrok.com/download.
    - Connect it to your account: `ngrok config add-authtoken <your token>` (the token is on the ngrok dashboard).
-   - On the dashboard, under *Domains*, claim your free static domain, e.g. `something.ngrok-free.app`.
+   - Your free fixed address is on the dashboard under *Domains* (the one marked "dev domain"), e.g. `something.ngrok-free.dev`.
 2. **Vercel**:
    - Add New → Project → import this GitHub repository.
    - **Root Directory:** `web`. The Next.js framework is detected automatically.
-   - **Environment variables:** `NEXT_PUBLIC_API_URL` and `API_URL`, both set to `https://<your-domain>.ngrok-free.app`.
+   - **Environment variables:** `NEXT_PUBLIC_API_URL` and `API_URL`, both set to `https://<your-domain>.ngrok-free.dev`.
    - Deploy, and note the site's address, e.g. `your-site.vercel.app`.
 
 **Every time the site should work** (before a presentation, for example):
 ```fish
-scripts/serve_public.sh your-site.vercel.app your-domain.ngrok-free.app
+scripts/serve_public.sh your-site.vercel.app your-domain.ngrok-free.dev
 ```
 This starts the API and the tunnel, allows your Vercel site (and its preview deployments) to call the API, and keeps
 the laptop awake, even with the lid closed, until you press Ctrl+C. Keep the laptop plugged in and online. Teammates
